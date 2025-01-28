@@ -1,0 +1,36 @@
+{
+  "name": "vanity-eth-private",
+  "version": "1.0.0",
+  "description": "Private vanity address generator with GPU support",
+  "type": "module",
+  "main": "index.js",
+  "private": true,
+  "bin": {
+    "vanity-eth": "./index.js"
+  },
+  "scripts": {
+    "start": "node index.js",
+    "build-cuda": "chmod +x scripts/build_cuda.sh && ./scripts/build_cuda.sh",
+    "build-opencl": "chmod +x scripts/build_opencl.sh && ./scripts/build_opencl.sh",
+    "build-gpu": "npm run build-cuda || npm run build-opencl"
+  },
+  "keywords": [
+    "ethereum",
+    "vanity",
+    "address",
+    "wallet",
+    "contract",
+    "cuda",
+    "opencl",
+    "gpu"
+  ],
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "ethereumjs-util": "^7.1.5",
+    "ethers": "^6.13.5",
+    "hh-mm-ss": "^1.2.0",
+    "ora": "^6.3.1",
+    "yargs": "^17.7.2"
+  }
+}
